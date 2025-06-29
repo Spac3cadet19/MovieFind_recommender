@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>MovieFind - AI Movie Recommendations</title>
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="container">
+    <h1>🎬 MovieFind</h1>
+
+    <!-- Search form -->
+    <form method="POST" action="/">
+      <input type="text" name="movie" placeholder="Enter a movie title..." required />
+      <button type="submit">Recommend</button>
+    </form>
+
+    <!-- Display recommendation message -->
+    {% if message %}
+    <div class="message">
+      <h2>{{ message }}</h2>
+    </div>
+    {% endif %}
+
+    <!-- Display RMSE -->
+    {% if rmse_score %}
+    <div class="accuracy">
+      <p>🎯 Model Accuracy (RMSE): <strong>{{ rmse_score }}</strong></p>
+    </div>
+    {% endif %}
+
+    <!-- Movie cards -->
+    {% if recommended_movies %}
+    <div class="movie-grid">
+      {% for movie in recommended_movies %}
+      <div class="movie-card">
+        <img src="{{ movie.poster or '' }}" alt="{{ movie.title }}" />
+        <div class="movie-title">{{ movie.title }}</div>
+        <div class="movie-score">⭐ {{ movie.score }}</div>
+      </div>
+      {% endfor %}
+    </div>
+    {% endif %}
+  </div>
+</body>
+</html>

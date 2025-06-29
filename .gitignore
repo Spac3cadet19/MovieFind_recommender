@@ -1,0 +1,48 @@
+# Byte-compiled / cache files
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+
+# Virtual environments
+venv/
+venv-surprise/
+.env/
+
+# VS Code settings
+.vscode/
+
+# Environment and sensitive config files
+*.env
+*.log
+
+# Flask and temp files
+instance/
+*.db
+*.sqlite3
+
+# Model files
+*.pkl
+*.joblib
+
+# Data files (optional: include small samples, exclude large ones)
+data/full/
+data/raw/
+*.csv
+*.tsv
+*.zip
+*.json
+
+# OS/system files
+.DS_Store
+Thumbs.db
+
+# Ignore video or large binary files
+*.mp4
+*.mkv
+*.avi
+*.tar
+*.gz
+
+# Don't ignore the Git repo itself
+!.git/
