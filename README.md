@@ -1,4 +1,4 @@
 
 # MovieFind_recommender
 An AI-powered movie recommendation system built with Python, Flask, and scikit-surprise. Provides personalized recommendations with poster images and accuracy scoring.
- 94123973a3eaa9781e08805a8f3a0d8912069ea8
+9c1344e1f07cb0435b4e8b149a630e42bf50c9a4

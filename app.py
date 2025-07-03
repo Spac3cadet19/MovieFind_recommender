@@ -15,9 +15,15 @@ def index():
             recommended_movies, message, _ = get_recommendations(movie)
 
     return render_template("index.html",
-                           recommended_movies=recommended_movies,  # ✅ full list of dicts
+                           recommended_movies=recommended_movies,
                            message=message,
                            rmse_score=rmse_score)
 
 if __name__ == "__main__":
+
+    from recommender import evaluate_model_rmse
+
+    print("✅ Testing SVD model loading and evaluation...")
+    rmse = evaluate_model_rmse()
+    print(f"✅ RMSE of pre-trained model: {rmse}")
     app.run(debug=True)

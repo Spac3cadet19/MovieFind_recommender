@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>MovieFind - AI Movie Recommendations</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 
   <!-- Custom CSS -->
   <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
@@ -12,14 +13,22 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
 </head>
 <body>
+  
+
   <div class="container">
     <h1>🎬 MovieFind</h1>
 
     <!-- Search form -->
-    <form method="POST" action="/">
-      <input type="text" name="movie" placeholder="Enter a movie title..." required />
-      <button type="submit">Recommend</button>
-    </form>
+    <form id="movie-form" method="POST">
+  <input type="text" name="movie" placeholder="Enter a movie title" required />
+  <button type="submit">Get Recommendations</button>
+</form>
+
+<!-- Loading message shown during form submission -->
+<div id="loading-message" style="display:none; color: #555; margin-top: 10px;">
+  🔄 Getting your recommendations...
+</div>
+
 
     <!-- Display recommendation message -->
     {% if message %}
@@ -48,5 +57,14 @@
     </div>
     {% endif %}
   </div>
+  <script>
+  const form = document.getElementById('movie-form');
+  const loadingMessage = document.getElementById('loading-message');
+
+  form.addEventListener('submit', function () {
+    loadingMessage.style.display = 'block';
+  });
+</script>
+
 </body>
 </html>
