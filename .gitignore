@@ -9,7 +9,6 @@ __pycache__/
 
 # Data and model files
 *.csv
-*.pkl
 *.npy
 
 .env
