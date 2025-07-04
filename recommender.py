@@ -1,3 +1,9 @@
+from dotenv import load_dotenv
+load_dotenv()
+import os
+TMDB_API_KEY = os.environ.get("TMDB_API_KEY")
+
+
 import pandas as pd
 from sklearn.neighbors import NearestNeighbors
 from fuzzywuzzy import process
@@ -161,3 +167,8 @@ def evaluate_model_rmse():
     rmse = accuracy.rmse(predictions, verbose=False)
     return round(rmse, 4)
 
+
+#test
+if __name__ == "__main__":
+    rmse = evaluate_model_rmse()
+    print("📊 Model RMSE:", rmse)
