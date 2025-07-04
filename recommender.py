@@ -18,7 +18,25 @@ except:
 
 
 # TMDB API Key
-TMDB_API_KEY = '576b2e4b9d41e15b43b1602bd4e22f64'
+import os
+TMDB_API_KEY = os.environ.get("TMDB_API_KEY")
+
+import os
+import requests
+
+def download_dataset():
+    dataset_path = "data/ratings_small.csv"
+    if not os.path.exists(dataset_path):
+        print("Downloading ratings dataset from Google Drive...")
+        url = "https://drive.google.com/uc?export=download&id=13wlh0s1tOd9sIc_2VaxXBw2CzXaN5snJ"  # Replace with your file ID
+        os.makedirs("data", exist_ok=True)
+        response = requests.get(url)
+        with open(dataset_path, "wb") as f:
+            f.write(response.content)
+        print("Download complete.")
+
+# Call before loading data
+download_dataset()
 
 # Get poster from TMDB
 def get_poster_url(movie_title):
