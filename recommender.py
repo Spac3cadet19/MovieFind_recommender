@@ -23,6 +23,25 @@ TMDB_API_KEY = os.environ.get("TMDB_API_KEY")
 
 import os
 import requests
+ from download_from_drive import download_file  # Add this import
+
+# Google Drive file ID for movies_metadata.csv
+movies_file_id = "1zbMlhl3nLGxT23wERB7kqD7fYLJJlKft"
+movies_path = "data/movies_metadata.csv"
+
+# Create the data folder if it doesn't exist
+os.makedirs("data", exist_ok=True)
+
+# Download file from Google Drive if not present
+if not os.path.exists(movies_path):
+    print("Downloading movies_metadata.csv from Google Drive...")
+    download_file(movies_file_id, movies_path)
+    print("Download complete.")
+
+# Load the dataset
+movies = pd.read_csv(movies_path, low_memory=False)
+
+
 
 def download_dataset():
     dataset_path = "data/ratings_small.csv"
