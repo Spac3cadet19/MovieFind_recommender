@@ -39,7 +39,6 @@ I made a collaborative-filtering movie recommendation system that suggests movie
 
 ## 📷 Screenshots
 
-> *(You can insert images or GIFs here showing the app interface once ready)*
 <img width="1366" height="692" alt="Screenshot (566)" src="https://github.com/user-attachments/assets/fd33d2bd-b927-492b-8f45-f1577f41c5bd" />
 
 ---
