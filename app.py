@@ -23,7 +23,7 @@ if __name__ == "__main__":
 
     from recommender import evaluate_model_rmse
 
-    print("✅ Testing SVD model loading and evaluation...")
+    print(" Testing SVD model loading and evaluation...")
     rmse = evaluate_model_rmse()
-    print(f"✅ RMSE of pre-trained model: {rmse}")
+    print(f" RMSE of pre-trained model: {rmse}")
     app.run(debug=True)
