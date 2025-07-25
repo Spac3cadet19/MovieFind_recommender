@@ -4,7 +4,7 @@ I made a collaborative-filtering movie recommendation system that suggests movie
 
 ## 🔗 Live Demo
 
-🌐 Try it here: [https://moviefind-recommender.onrender.com](https://moviefind-recommender.onrender.com)
+🌐 Try it here: https://moviefind-recommender.onrender.com
 
 ---
 
