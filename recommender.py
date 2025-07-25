@@ -35,7 +35,7 @@ from download_from_drive import download_file  # Add this import
 movies_file_id = "1zbMlhl3nLGxT23wERB7kqD7fYLJJlKft"
 movies_path = "data/movies_metadata.csv"
 
-# Create the data folder if it doesn't exist
+# To Create the data folder if it doesn't exist
 os.makedirs("data", exist_ok=True)
 
 # Download file from Google Drive if not present
@@ -78,9 +78,9 @@ def get_poster_url(movie_title):
                 return f"https://image.tmdb.org/t/p/w500{poster_path}"
     
     except requests.exceptions.Timeout:
-        print(f"⚠️ TMDB API timed out for: {movie_title}")
+        print(f" TMDB API timed out for: {movie_title}")
     except requests.exceptions.RequestException as e:
-        print(f"⚠️ Error fetching poster for '{movie_title}': {e}")
+        print(f" Error fetching poster for '{movie_title}': {e}")
     
     # Fallback image to prevent app crash
     return "https://via.placeholder.com/200x300?text=No+Poster"
@@ -125,7 +125,7 @@ def get_recommendations(movie_title, n_recommendations=10):
     matched = process.extractOne(movie_title, movie_list)
 
     if not matched or matched[1] < 60:
-        return [], f"❌ No close match found for '{movie_title}'. Try another title.", None
+        return [], f" No close match found for '{movie_title}'. Try another title.", None
 
     matched_title = matched[0]
     similarity_score = matched[1]
@@ -150,14 +150,14 @@ def get_recommendations(movie_title, n_recommendations=10):
     if movie_title.lower() == matched_title.lower():
         message = f"Showing recommendations for: {matched_title}"
     else:
-        message = f"🔍 Closest match found for '{movie_title}' is '{matched_title}'. Showing recommendations..."
+        message = f" Closest match found for '{movie_title}' is '{matched_title}'. Showing recommendations..."
 
     return recommendations, message, None
 
 # Evaluate with SVD
 def evaluate_model_rmse():
     if svd_model is None:
-        return "⚠️ No pre-trained SVD model found."
+        return " No pre-trained SVD model found."
 
     reader = Reader(rating_scale=(0.5, 5.0))
     data = Dataset.load_from_df(ratings[['userId', 'movieId', 'rating']], reader)
@@ -171,4 +171,4 @@ def evaluate_model_rmse():
 #test
 if __name__ == "__main__":
     rmse = evaluate_model_rmse()
-    print("📊 Model RMSE:", rmse)
+    print(" Model RMSE:", rmse)
