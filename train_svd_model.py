@@ -13,4 +13,4 @@ model = SVD()
 model.fit(trainset)
 dump.dump("svd_model.pkl", algo=model)
 
-print("✅ SVD model saved as svd_model.pkl")
+print(" SVD model saved as svd_model.pkl")
