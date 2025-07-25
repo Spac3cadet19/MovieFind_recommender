@@ -16,4 +16,4 @@ model.fit(trainset)
 
 # Save the model
 dump.dump('svd_model.pkl', algo=model)
-print("✅ Model saved successfully.")
+print(" Model saved successfully.")
