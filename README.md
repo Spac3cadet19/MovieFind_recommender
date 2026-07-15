@@ -1,6 +1,6 @@
 # 🎬 MovieFind - A Movie Recommendation System
 
-I made a collaborative-filtering movie recommendation system that suggests movies based on a user's input title using machine learning algorithms. This project was built as part of my university course in **Introduction to Artificial Intelligence**, and it was my first full-stack machine learning web app.
+I made a collaborative-filtering movie recommendation system that suggests movies based on a user's input title using machine learning algorithms, and it was my first full-stack machine learning web app.
 
 ## 🔗 Live Demo
 
